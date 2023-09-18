@@ -1,0 +1,125 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+/* -----------
+! Media query !
+------------- */
+@media only screen and (max-whidt: 425px) {
+}
+/* -------------
+!!!!!!!!!!!!!!!
+--------------- */
+body {
+  text-align: center;
+  margin-inline: 40px;
+  background-color: #0a0908;
+}
+
+/* ----------
+!!!! Grid !!!!
+----------- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(7, 1fr);
+  grid-gap: 10px;
+  background-color: #003049;
+}
+
+.grid-comtainer {
+  background-color: #003049;
+  padding: 20px;
+}
+header {
+  display: flex;
+  justify-content: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+#logo {
+  color: yellow;
+  border: solid pink;
+  align-items: start;
+  max-width: 20%;
+}
+
+#menu {
+  color: yellow;
+  border: solid orange;
+  max-width: 70%;
+}
+#hero {
+  grid-template-columns: auto;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+aside {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+#sponsors {
+  background-color: blue;
+  justify-content: center;
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+footer {
+  background-color: brown;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 5;
+  grid-row-end: 6;
+}
+section,
+aside,
+footer {
+  color: yellow;
+  border: solid purple;
+}
+/* ----------
+!!!! Grid, Grid !!!!
+----------- */
+.castle-grid > div {
+  display: grid;
+  grid-template-rows: repeat(3, fr);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#Saint-michel {
+  grid-column-start: 1;
+
+  grid-row-start: 2;
+}
+#edinburgh {
+  grid-column-start: 2;
+
+  grid-row-start: 2;
+}
+#disney {
+  grid-column-start: 3;
+
+  grid-row-start: 3;
+}
+/* ----------
+!!!! Text !!!!
+----------- */
+
+/* ----------
+!!!! Image !!!!
+----------- */
+
+img {
+  width: 70px;
+  border-radius: 10px;
+}
