@@ -15,49 +15,35 @@ body {
 /* -------------
 !!!!!!Hamburger!!!!!!
 --------------- */
-#menutoggle {
+.hamburger-menu {
+  margin: 2rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+}
+.bar-top,
+.bar-middle,
+.bar-bottom {
+  height: 5px;
+  background: white;
+  border-radius: 5px;
+  margin: 3px 0;
+  transform-origin: left;
+  transition: all 0.5s;
+}
+.hamburger-menu:hover .bar-top {
+  transform: rotate(45deg);
+}
+.hamburger-menu:hover .bar-middle {
+  transform: translateX(1rem);
   opacity: 0;
 }
-.menubtn {
-  position: fixed;
-  top: 20px;
-  width: 26px;
-  height: 26px;
+.hamburger-menu:hover .bar-bottom {
+  transform: rotate(-45deg);
 }
-.menubtn > span,
-.menubtn > span::before,
-.menubtn > span::after {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: white;
-}
-.menubtn > span::before {
-  content: "";
-  top: -8px;
-}
-.menubtn > span::after {
-  content: "";
-  top: 8px;
-}
-.menubox {
-  display: block;
-  position: fixed;
-  top: 0;
-  width: 300px;
-  height: 100%;
-  margin: 0;
-  padding: 80px 0;
-  list-style: none;
-  background-color: #eceff1;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-  transition-duration: 0.25s;
-}
-/* -------------
-!!!!!!Test!!!!!!
---------------- */
-
 /* ----------
 !!!! Grid !!!!
 ----------- */
@@ -99,18 +85,18 @@ aside {
   grid-row-start: 2;
   grid-row-end: 4;
   margin-bottom: 30px;
-  border: solid;
 }
 
 #sponsors {
+  display: flex;
   justify-content: center;
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 4;
   grid-row-end: 5;
   display: flex;
-  text-align: center;
   margin-bottom: 30px;
+  flex-direction: column;
 }
 
 footer {
@@ -126,11 +112,11 @@ footer {
   color: gainsboro;
 }
 /* ----------
-    !!!! Grid, Grid !!!!
+    !!!! Grid inn Grid !!!!
     ----------- */
 .castle-grid > div {
   display: grid;
-  grid-template-rows: repeat(3, fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
 }
 
@@ -156,6 +142,9 @@ h1 {
 p {
   padding: 10px;
 }
+#copy-rights {
+  color: gray;
+}
 /* ----------
 !!!! Image !!!!
 ----------- */
@@ -167,12 +156,13 @@ p {
 .aside-img {
   width: 70px;
   border-radius: 10px;
+  margin-inline: 20px;
 }
 /* ---------------------------------------------------
 !!!!!!!!!!!!!!!! Media query Start !!!!!!!!!!!!!!!!!!!
 ----------------------------------------------- */
 
-@media only screen and (max-whidt: 425px) {
+@media (max-width: 600px) {
   header {
     display: flex;
     justify-content: center;
@@ -181,13 +171,11 @@ p {
   }
 
   #logo {
-    color: yellow;
     align-items: start;
     max-width: 20%;
   }
 
   #menu {
-    color: yellow;
     max-width: 70%;
   }
   #hero {
@@ -216,50 +204,45 @@ p {
     text-align: center;
     margin-bottom: 30px;
   }
+}
 
-  footer {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 5;
-    grid-row-end: 6;
-    margin-bottom: 30px;
-  }
-  section,
-  aside,
-  footer {
-    color: yellow;
-  }
-  /* ----------
+footer {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  margin-bottom: 30px;
+}
+/* ----------
     !!!! Grid, Grid !!!!
     ----------- */
-  .castle-grid > div {
-    display: grid;
-    grid-template-rows: repeat(3, fr);
-    grid-template-columns: repeat(3, 1fr);
-  }
+.castle-grid > div {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+}
 
-  #Saint-michel {
-    grid-column-start: 1;
-    grid-row-start: 2;
-  }
-  #edinburgh {
-    grid-column-start: 2;
-    grid-row-start: 2;
-  }
-  #disney {
-    grid-column-start: 3;
-    grid-row-start: 3;
-  }
-  /* ----------
+#Saint-michel {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+#edinburgh {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+#disney {
+  grid-column-start: 3;
+  grid-row-start: 3;
+}
+/* ----------
 !!!! Text !!!!
 ----------- */
 
-  /* ----------
+/* ----------
 !!!! Image !!!!
 ----------- */
 
-  .aside-img {
-    width: 70px;
-    border-radius: 10px;
-  }
+.aside-img {
+  width: 70px;
+  border-radius: 10px;
 }
